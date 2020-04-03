@@ -9,6 +9,8 @@ services:
        - ./fluentd/:/fluentd/etc
      links:
        - "elasticsearch"
+     depends_on:
+       - elasticsearch
      ports:
        - "24224:24224"
        - "24224:24224/udp"
@@ -54,6 +56,8 @@ services:
        - logging
      links:
        - "elasticsearch"
+     depends_on:
+       - elasticsearch
      ports:
        - "5601:5601"
      logging:
